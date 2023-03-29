@@ -2,6 +2,8 @@ package com.scrapify.scrapify.controller;
 
 import com.scrapify.scrapify.entity.Category;
 import com.scrapify.scrapify.service.CategoryService;
+import com.scrapify.scrapify.utils.PaginationDTO;
+import com.scrapify.scrapify.utils.TableResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,5 +36,10 @@ public class CategoryController {
     @GetMapping("/find_all")
     public ResponseEntity<List<Category>> getAll(){
         return new ResponseEntity<>(categoryService.getAll(),HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/get_all")
+    public ResponseEntity<TableResponse> getCategories(@RequestBody PaginationDTO pagination){
+        return new ResponseEntity<>(categoryService.getCategories(pagination), HttpStatus.FOUND);
     }
 }

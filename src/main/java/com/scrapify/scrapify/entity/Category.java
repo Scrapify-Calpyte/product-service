@@ -1,7 +1,8 @@
 package com.scrapify.scrapify.entity;
 
-import jakarta.persistence.Entity;
 import lombok.Data;
+
+import javax.persistence.Entity;
 
 @Data
 @Entity
