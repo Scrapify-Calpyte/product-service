@@ -9,4 +9,6 @@ import javax.persistence.Entity;
 public class Category extends AuditableBase{
     private String name;
     private String code;
+    private String description;
+    private String image;
 }

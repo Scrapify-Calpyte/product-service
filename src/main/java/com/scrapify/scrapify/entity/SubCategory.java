@@ -15,6 +15,9 @@ import javax.persistence.ManyToOne;
 public class SubCategory extends AuditableBase{
     private String name;
     private String code;
+    private String description;
+    private String image;
+    private Integer price;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
