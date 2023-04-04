@@ -28,17 +28,17 @@ public class CategoryController {
         return new ResponseEntity<>(categoryService.save(category), HttpStatus.CREATED);
     }
 
-    @GetMapping("/by_id")
+    @GetMapping("/by-id")
     public ResponseEntity<Category> findById(@RequestParam String id){
         return new ResponseEntity<>(categoryService.findById(id),HttpStatus.OK);
     }
 
-    @GetMapping("/find_all")
+    @GetMapping("/find-all")
     public ResponseEntity<List<Category>> getAll(){
         return new ResponseEntity<>(categoryService.getAll(),HttpStatus.OK);
     }
 
-    @PostMapping(value = "/get_all")
+    @PostMapping(value = "/get-all")
     public ResponseEntity<TableResponse> getCategories(@RequestBody PaginationDTO pagination){
         return new ResponseEntity<>(categoryService.getCategories(pagination), HttpStatus.FOUND);
     }

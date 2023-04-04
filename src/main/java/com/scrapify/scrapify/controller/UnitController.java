@@ -1,7 +1,7 @@
 package com.scrapify.scrapify.controller;
 
-import com.scrapify.scrapify.entity.Region;
-import com.scrapify.scrapify.service.RegionService;
+import com.scrapify.scrapify.entity.Unit;
+import com.scrapify.scrapify.service.UnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,20 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/region")
-public class RegionController {
+@RequestMapping("/unit")
+public class UnitController {
 
     @Autowired
-    private RegionService regionService;
-
+    private UnitService unitService;
 
     @PostMapping("/save")
-    public ResponseEntity<Region> save(@RequestBody Region region){
-        return new ResponseEntity<>(regionService.save(region), HttpStatus.CREATED);
+    public ResponseEntity<Unit> save(@RequestBody Unit unit){
+        return new ResponseEntity<>(unitService.save(unit), HttpStatus.CREATED);
     }
 
     @GetMapping("/get-all")
-    public ResponseEntity<List<Region>> getAll(){
-        return new ResponseEntity<>(regionService.getAll(),HttpStatus.OK);
+    public ResponseEntity<List<Unit>> getAll(){
+        return new ResponseEntity<>(unitService.getAll(),HttpStatus.OK);
     }
 }

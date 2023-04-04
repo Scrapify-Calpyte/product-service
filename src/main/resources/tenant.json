@@ -1,7 +1,7 @@
 [
   {
     "tenantName" : "default",
-    "schema" : "scrapify"
+    "schema" : "product_catalog"
   },
   {
     "tenantName" : "scrapify",

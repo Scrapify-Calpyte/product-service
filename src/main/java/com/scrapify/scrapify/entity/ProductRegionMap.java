@@ -9,14 +9,16 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Data
 @Entity
+@Table(name = "product_rates")
 public class ProductRegionMap extends IdentifiableBase{
-    private String price;
+    private Double marketPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sub_category_id")
+    @JoinColumn(name = "product_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private SubCategory product;

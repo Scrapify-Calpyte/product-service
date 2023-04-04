@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product_region")
+@RequestMapping("/product/region")
 public class ProductRegionMapController {
 
     @Autowired
@@ -27,12 +27,12 @@ public class ProductRegionMapController {
         return new ResponseEntity<>(productRegionMapService.save(productRegionMap), HttpStatus.CREATED);
     }
 
-    @GetMapping("/by_region")
+    @GetMapping("/by-region")
     public ResponseEntity<List<ProductRegionMap>> findByRegion(@RequestParam("region") String id){
         return new ResponseEntity<>(productRegionMapService.findByRegion(id),HttpStatus.OK);
     }
 
-    @GetMapping("/by_product")
+    @GetMapping("/by-product")
     public ResponseEntity<List<ProductRegionMap>> findByProduct(@RequestParam("product") String id){
         return new ResponseEntity<>(productRegionMapService.findByProduct(id),HttpStatus.OK);
     }

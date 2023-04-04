@@ -3,10 +3,12 @@ package com.scrapify.scrapify.entity;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Data
 @Entity
-public class Category extends IdentifiableBase{
+@Table(name = "unit")
+public class Unit extends IdentifiableBase{
     private String name;
-    private boolean isActive;
+    private Double kgConversion;
 }

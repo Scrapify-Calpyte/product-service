@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/sub_category")
+@RequestMapping("/sub-category")
 public class SubCategoryController {
 
     @Autowired
@@ -28,17 +28,17 @@ public class SubCategoryController {
         return new ResponseEntity<>(subCategoryService.save(subCategory), HttpStatus.CREATED);
     }
 
-    @GetMapping("/by_id")
+    @GetMapping("/by-id")
     public ResponseEntity<SubCategory> findById(@RequestParam String id){
         return new ResponseEntity<>(subCategoryService.findById(id),HttpStatus.OK);
     }
 
-    @GetMapping("/find_all")
+    @GetMapping("/find-all")
     public ResponseEntity<List<SubCategory>> getAll(){
         return new ResponseEntity<>(subCategoryService.getAll(),HttpStatus.OK);
     }
 
-    @PostMapping(value = "/get_all")
+    @PostMapping(value = "/get-all")
     public ResponseEntity<TableResponse> getSubCategories(@RequestBody PaginationDTO pagination){
         return new ResponseEntity<>(subCategoryService.getSubCategories(pagination), HttpStatus.FOUND);
     }
