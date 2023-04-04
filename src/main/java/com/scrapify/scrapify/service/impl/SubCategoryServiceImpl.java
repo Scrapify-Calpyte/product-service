@@ -1,12 +1,9 @@
 package com.scrapify.scrapify.service.impl;
 
-import com.scrapify.scrapify.entity.Category;
 import com.scrapify.scrapify.entity.SubCategory;
 import com.scrapify.scrapify.repository.SubCategoryRepository;
 import com.scrapify.scrapify.service.SubCategoryService;
-import com.scrapify.scrapify.specification.CategorySpecification;
 import com.scrapify.scrapify.specification.SubCategorySpecification;
-import com.scrapify.scrapify.utils.Mapper;
 import com.scrapify.scrapify.utils.PaginationDTO;
 import com.scrapify.scrapify.utils.SearchCriteria;
 import com.scrapify.scrapify.utils.TableResponse;
@@ -30,7 +27,6 @@ public class SubCategoryServiceImpl implements SubCategoryService {
 
     @Override
     public SubCategory save(SubCategory subCategory) {
-        Mapper.setAuditable(subCategory);
         subCategoryRepository.save(subCategory);
         return subCategory;
     }

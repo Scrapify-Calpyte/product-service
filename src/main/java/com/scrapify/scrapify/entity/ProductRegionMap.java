@@ -13,13 +13,19 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "products")
-public class SubCategory extends IdentifiableBase{
-    private String name;
+@Table(name = "product_rates")
+public class ProductRegionMap extends IdentifiableBase{
+    private Double marketPrice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "product_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Category category;
+    private SubCategory product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "region_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Region region;
 }

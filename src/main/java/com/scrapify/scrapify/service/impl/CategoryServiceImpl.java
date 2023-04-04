@@ -4,7 +4,6 @@ import com.scrapify.scrapify.entity.Category;
 import com.scrapify.scrapify.repository.CategoryRepository;
 import com.scrapify.scrapify.service.CategoryService;
 import com.scrapify.scrapify.specification.CategorySpecification;
-import com.scrapify.scrapify.utils.Mapper;
 import com.scrapify.scrapify.utils.PaginationDTO;
 import com.scrapify.scrapify.utils.SearchCriteria;
 import com.scrapify.scrapify.utils.TableResponse;
@@ -28,7 +27,6 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category save(Category category) {
-        Mapper.setAuditable(category);
         categoryRepository.save(category);
         return category;
     }
