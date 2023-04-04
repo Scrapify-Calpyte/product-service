@@ -21,11 +21,11 @@ public class ProductRegionMapServiceImpl implements ProductRegionMapService {
 
     @Override
     public List<ProductRegionMap> findByRegion(String id) {
-        return productRegionMapRepository.findByRegion(id);
+        return productRegionMapRepository.findAllByRegionId(id);
     }
 
     @Override
     public List<ProductRegionMap> findByProduct(String id) {
-        return productRegionMapRepository.findByProduct(id);
+        return productRegionMapRepository.findAllByProductId(id);
     }
 }
