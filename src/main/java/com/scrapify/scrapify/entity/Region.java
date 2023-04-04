@@ -6,6 +6,6 @@ import javax.persistence.Entity;
 
 @Data
 @Entity
-public class Category extends IdentifiableBase{
+public class Region extends IdentifiableBase{
     private String name;
 }

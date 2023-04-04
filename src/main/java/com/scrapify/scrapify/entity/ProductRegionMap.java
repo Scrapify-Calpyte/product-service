@@ -12,12 +12,18 @@ import javax.persistence.ManyToOne;
 
 @Data
 @Entity
-public class SubCategory extends IdentifiableBase{
-    private String name;
+public class ProductRegionMap extends IdentifiableBase{
+    private String price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "sub_category_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private Category category;
+    private SubCategory product;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "region_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private Region region;
 }

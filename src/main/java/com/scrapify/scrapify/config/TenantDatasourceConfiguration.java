@@ -64,9 +64,9 @@ public class TenantDatasourceConfiguration {
 
     private DriverManagerDataSource buildDatasource(String schema) {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/scrapify?currentSchema="+schema);
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("2000");
+//        dataSource.setUrl("jdbc:postgresql://103.108.220.162:5438/egovernance?currentSchema="+schema);
+//        dataSource.setUsername("postgres");
+//        dataSource.setPassword("postgres");
         dataSource.setUrl(datasourceUrl+schema);
         dataSource.setUsername(dbUser);
         dataSource.setPassword(dbPassword);
